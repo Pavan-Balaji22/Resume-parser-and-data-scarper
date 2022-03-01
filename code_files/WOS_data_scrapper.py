@@ -9,7 +9,7 @@ import time
 
 
 PATH = "C:\Program Files (x86)\chromedriver.exe"
-ignored_exceptions=(NoSuchElementException,StaleElementReferenceException,)
+
 
 driver = webdriver.Chrome(PATH)
 driver.get("https://login.proxy.bib.uottawa.ca/login?url=https://www.webofknowledge.com/wos")
@@ -22,4 +22,14 @@ driver.find_element_by_xpath("//input[@value = 'Sign in']").click()
 time.sleep(1)
 driver.find_element_by_xpath("//input[@value = 'Yes']").click()
 time.sleep(3)
+driver.find_element_by_id("onetrust-accept-btn-handler").click()
+time.sleep(1)
+driver.find_element_by_id("pendo-close-guide-ecbac349").click()
+time.sleep(1)
+driver.find_element_by_link_text("RESEARCHERS").click()
+time.sleep(1)
+driver.find_element_by_id("mat-input-0").send_keys("Elias") # Last name field
+driver.find_element_by_id("mat-input-1").send_keys("Ashley") # First name field
+# driver.find_element_by_xpath("//input[@value = 'Yes']").click()
+time.sleep(300)
 driver.quit()
