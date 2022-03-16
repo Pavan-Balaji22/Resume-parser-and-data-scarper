@@ -27,9 +27,9 @@ time.sleep(1)
 driver.find_element_by_id("pendo-close-guide-ecbac349").click()
 time.sleep(1)
 driver.find_element_by_link_text("RESEARCHERS").click()
-time.sleep(1)
+time.sleep(2)
 driver.find_element_by_id("mat-input-0").send_keys("Elias") # Last name field
 driver.find_element_by_id("mat-input-1").send_keys("Ashley") # First name field
-# driver.find_element_by_xpath("//input[@value = 'Yes']").click()
+# driver.find_element_by_xpath("").click()
 time.sleep(300)
 driver.quit()
