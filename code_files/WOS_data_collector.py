@@ -13,8 +13,8 @@ import getpass
 # LNAME = "Elias"
 # COUNT = 0
 
-PATH = "C:\Program Files (x86)\chromedriver.exe"
-URL = "https://login.proxy.bib.uottawa.ca/login?url=https://www.webofknowledge.com/wos"
+# PATH = "C:\Program Files (x86)\chromedriver.exe"
+# URL = "https://login.proxy.bib.uottawa.ca/login?url=https://www.webofknowledge.com/wos"
 
 class WOS_data_collector:
     def __init__(self,driver_path, driver_setings = None):
