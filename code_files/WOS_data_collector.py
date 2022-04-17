@@ -7,14 +7,15 @@ from selenium.webdriver.support.ui import Select
 import time
 import getpass
 
-# EMAIL = input("Username: ")
-# PASSWORD = getpass.getpass()
-# FNAME = "Ashley"
-# LNAME = "Elias"
+
+EMAIL = "pkumar2@uottawa.ca" # input("Username: ")
+PASSWORD = "Astayuno1129!" #getpass.getpass()
+FNAME = "Alexandra Martynova-Van"
+LNAME = "Kley"
 # COUNT = 0
 
-# PATH = "C:\Program Files (x86)\chromedriver.exe"
-# URL = "https://login.proxy.bib.uottawa.ca/login?url=https://www.webofknowledge.com/wos"
+PATH = "C:\chromedriver.exe"
+URL = "https://login.proxy.bib.uottawa.ca/login?url=https://www.webofknowledge.com/wos"
 
 class WOS_data_collector:
     def __init__(self,driver_path, driver_setings = None):
@@ -33,7 +34,7 @@ class WOS_data_collector:
         if driver_setings == None:
             self.driver = webdriver.Chrome(executable_path = driver_path)
         else:
-            self.driver = webdriver.Chrome(executable_path = driver_path, desired_capabilities = driver_setings)
+            self.driver = webdriver.Chrome(executable_path = driver_path, options = driver_setings)
 
 
     def login_to(self,web_url,email,password):
@@ -53,20 +54,25 @@ class WOS_data_collector:
         '''
         self.driver.get(web_url)
         self.driver.execute_script("shibAuth()")
+        time.sleep(1)
         self.driver.find_element_by_id("i0116").send_keys(email)
+        time.sleep(1)
         self.driver.find_element_by_id("idSIButton9").click()
+        time.sleep(2)
         self.driver.find_element_by_id("i0118").send_keys(password)
-        time.sleep(1)
+        time.sleep(2)
         self.driver.find_element_by_xpath("//input[@value = 'Sign in']").click()
-        time.sleep(1)
+        time.sleep(2)
         self.driver.find_element_by_xpath("//input[@value = 'Yes']").click()
-        time.sleep(3)
+        time.sleep(4)
         self.driver.find_element_by_id("onetrust-accept-btn-handler").click()
-        time.sleep(1)
-        self.driver.find_element_by_id("pendo-close-guide-ecbac349").click()
+        time.sleep(3)
+        self.driver.find_element_by_xpath("//mat-icon[@aria-label = 'Close this dialog']").click()
+        time.sleep(3)
+        self.driver.find_element_by_id("pendo-close-guide-5600f670").click()
         time.sleep(1)
 
-    def search_and_download(self,fname,lname):
+    def search_and_download(self,fname,lname,filename):
         '''
             Function to search and download given authors citation report.
             Parameters
@@ -82,29 +88,31 @@ class WOS_data_collector:
         '''
         # global COUNT
         self.driver.find_element_by_link_text("RESEARCHERS").click()
-        time.sleep(2)
-        self.driver.find_element_by_xpath("//input[@formcontrolname = 'lastName']").send_keys(Keys.CONTROL+"A",Keys.DELETE)
+        time.sleep(10)
         self.driver.find_element_by_xpath("//input[@formcontrolname = 'lastName']").send_keys(lname) # Last name field
-        self.driver.find_element_by_xpath("//input[@formcontrolname = 'firstName']").send_keys(Keys.CONTROL+"A",Keys.DELETE)
         self.driver.find_element_by_xpath("//input[@formcontrolname = 'firstName']").send_keys(fname) # First name field
-        time.sleep(1)
+        self.driver.find_element_by_xpath("//input[@formcontrolname = 'firstName']").send_keys(Keys.ENTER)
+        time.sleep(4)
         self.driver.find_element_by_xpath("//button[@cdxanalyticscategory = 'WOS-authorsearch-search']").click()
         time.sleep(4)
         # if COUNT ==2:
         #     driver.find_element_by_xpath("//button[@class= '_pendo-close-guide']").click()
-        self.driver.find_element_by_partial_link_text(lname).click()
-        time.sleep(1)
+        try:
+            self.driver.find_element_by_partial_link_text(lname+",").click()
+        except:
+            pass
+        time.sleep(3)
         self.driver.find_element_by_link_text('View citation report').click()
-        time.sleep(2)
+        time.sleep(10)
         self.driver.find_element_by_xpath("//button[@aria-label = 'Export Full Report']").click()
-        time.sleep(2)
-        self.driver.find_element_by_xpath("//input[@data-placeholder = 'File name']").send_keys(fname+" "+lname)
-        time.sleep(1)
+        time.sleep(10)
+        self.driver.find_element_by_xpath("//input[@data-placeholder = 'File name']").send_keys(filename)
+        time.sleep(4)
         self.driver.find_element_by_xpath("//mat-radio-button[@value = 'crx']").click()
         self.driver.find_element_by_xpath("//button[@class = 'standard-button primary-button']").click()
         # COUNT = COUNT+1
         time.sleep(1)
-        self.driver.find_element_by_link_text('Search').click()
+        # self.driver.find_element_by_link_text('Search').click()
     
     def quit_session(self):
         '''
@@ -120,7 +128,7 @@ class WOS_data_collector:
         '''    
         self.driver.quit()
 
-# driver = WOS_data_collector(PATH)
-# driver.login_to(URL,EMAIL,PASSWORD)
-# driver.search_and_download(FNAME,LNAME)
+driver = WOS_data_collector(PATH)
+driver.login_to(URL,EMAIL,PASSWORD)
+driver.search_and_download(FNAME,LNAME,FNAME+LNAME)
 # driver.quit_session()
