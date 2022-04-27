@@ -1,0 +1,71 @@
+[33mcommit c063fd80a091bfc459675dc9e97dda699892f8fb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Tue Mar 29 23:32:13 2022 -0400
+
+    Structured everything
+
+[33mcommit 47f3e843a2abb1ad30decdd1346971f07dd09066[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Tue Mar 29 20:40:41 2022 -0400
+
+    Download part complete
+
+[33mcommit f3f6ae06b1907b65089b8752a57d03869533499d[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Tue Mar 29 20:37:58 2022 -0400
+
+    Download part complete
+
+[33mcommit 7747d39acbef4b19652a6722faa97e0cdbdc510b[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Mon Mar 28 18:42:27 2022 -0400
+
+    Search button done
+
+[33mcommit f19a867aff400f78238f32d225761e6a6e9e7a44[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Wed Mar 16 10:59:48 2022 -0400
+
+    Added changes to PDF_parser and WOS_data_scrapper
+
+[33mcommit fbc254ff602d12a150445af7a25ad32bc8b8a433[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Tue Mar 1 12:14:59 2022 -0500
+
+    WOS_data_scrapper.py updated
+
+[33mcommit 32aa2f192aa6be86d0ae7eb44c38c197ea9d854a[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Sat Feb 26 12:29:21 2022 -0500
+
+    added sample file
+
+[33mcommit 56fd1b9a3963640829d26146401d585cf94c2534[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Wed Feb 23 05:42:10 2022 -0500
+
+    WOS_data_scrapper.py updated
+
+[33mcommit fdbf9f3207f4110ad551caab17b50577f615ec16[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Tue Feb 22 19:16:54 2022 -0500
+
+    WOS_data_scrapper.py added
+
+[33mcommit 049642d25884a8339b4625c4bf24c671bab8f2c5[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Mon Feb 21 11:34:17 2022 -0500
+
+    Data created
+
+[33mcommit 93e1c1b591d6d08eaf54d2494c2837fe597d951e[m
+Author: Pavan Balaji Kumar <pavanbalaji22@gmail.com>
+Date:   Thu Feb 3 12:50:58 2022 -0500
+
+    First commit
+
+[33mcommit 92a7462e7c140fc1a7270a0813a58e0801545e0b[m
+Author: Pavan Balaji Kumar <53401652+Pavan-Balaji22@users.noreply.github.com>
+Date:   Thu Feb 3 12:49:06 2022 -0500
+
+    Initial commit
